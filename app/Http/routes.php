@@ -15,4 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin/login', 'Admin\LoginController@login');
+Route::any('admin/crypt', 'Admin\LoginController@crypt');
+
+Route::any('admin/login', 'Admin\LoginController@login');
+Route::get('admin/code', 'Admin\LoginController@code');
