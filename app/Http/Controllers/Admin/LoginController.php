@@ -26,8 +26,8 @@ class LoginController extends CommonController
             }
 
             session(['user'=>$user]);
-            dd(session('user'));
-            echo "OK";
+            // dd(session('user'));
+            return redirect('admin/index');
 
 
         } else {
