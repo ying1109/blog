@@ -29,22 +29,21 @@ class LoginController extends CommonController
             // dd(session('user'));
             return redirect('admin/index');
 
-
         } else {
             return view('admin.login');
         }
 
     }
 
+    // 退出
+    public function quit() {
+        session(array('user'=>null));
+        return redirect('admin/login');
+    }
+
     public function code() {
         $code = new \Code;
         $code->make();
-    }
-
-    public function crypt() {
-        $str = '123456';
-
-        echo Crypt::encrypt($str);
     }
 
 

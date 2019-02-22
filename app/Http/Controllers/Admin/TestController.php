@@ -16,7 +16,15 @@ class TestController extends CommonController
 
     // 打印服务器系统常量
     public function server() {
-        dd($_SERVER);
+        // dd($_SERVER);
+        phpinfo();
+    }
+
+    // 密码
+    public function crypt() {
+        $str = '123456';
+
+        echo Crypt::encrypt($str);
     }
 
 
