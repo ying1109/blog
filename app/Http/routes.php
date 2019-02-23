@@ -11,14 +11,12 @@
 |
 */
 
+// web中间件从5.2.27版本以后默认全局加载，不需要自己手动载入，如果自己手动重复载入，会导致session无法加载
 // Route::group(['middleware' => ['web']], function () {
 
     Route::get('/', function () {
         return view('welcome');
     });
-
-    Route::any('admin/index', 'Admin\IndexController@index');
-    Route::any('admin/info', 'Admin\IndexController@info');
 
     Route::any('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');
@@ -26,10 +24,11 @@
 
 
 
-Route::group(['middleware'=>['web', 'admin.login'], 'prefix'=>'admin', 'namespace'=>'Admin'], function () {
-    Route::any('index', 'IndexController@index');
-    Route::any('info', 'IndexController@info');
-    Route::any('quit', 'LoginController@quit');
+Route::group(['middleware'=>['admin.login'], 'prefix'=>'admin', 'namespace'=>'Admin'], function () {
+    Route::get('index', 'IndexController@index');
+    Route::get('info', 'IndexController@info');
+    Route::get('quit', 'LoginController@quit');
+    Route::any('pass', 'IndexController@pass');
 });
 
 
