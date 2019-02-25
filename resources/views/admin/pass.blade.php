@@ -22,10 +22,15 @@
         {{csrf_field()}}
 
         @if(count($errors)>0)
-            @foreach ($errors->all() as $k)
-                <p style="color: red;">{{$k}}</p>
-            @endforeach
+            @if (is_object($errors))
+                @foreach ($errors->all() as $k)
+                    <p style="color: red;">{{$k}}</p>
+                @endforeach
+            @else
+                <p style="color: red;">{{$errors}}</p>
+            @endif
         @endif
+
         <table class="add_tab">
             <tbody>
             <tr>
