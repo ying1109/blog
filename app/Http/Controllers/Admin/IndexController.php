@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-// use Dotenv\Validator;
 use App\Http\Model\User;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Validator;
