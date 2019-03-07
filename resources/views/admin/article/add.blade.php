@@ -32,7 +32,7 @@
 <!--结果集标题与导航组件 结束-->
 
 <div class="result_wrap">
-    <form action="{{url('admin/category')}}" method="post">
+    <form action="{{url('admin/article')}}" method="post">
         {{csrf_field()}}
         <table class="add_tab">
             <tbody>
@@ -118,7 +118,7 @@
                     <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.config.js')}}"></script>
                     <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/ueditor.all.min.js')}}"> </script>
                     <script type="text/javascript" charset="utf-8" src="{{asset('resources/org/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
-                    <script id="editor" name="art_content" type="text/plain" style="width:860px;height:500px;"></script>
+                    <script id="editor" name="art_content" type="text/plain" style="width:860px;height:100px;"></script>
 
                     <script type="text/javascript">
                         var ue = UE.getEditor('editor');
