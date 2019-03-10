@@ -84,7 +84,7 @@ class CategoryController extends CommonController
     // put.admin/category/{category} （更新分类）
     public function update($cate_id) {
         $input = Input::except('_token', '_method');
-        $res = Category::where('cate_id', $cate_id)->update($input);
+        $res   = Category::where('cate_id', $cate_id)->update($input);
         if ($res) {
             return redirect('admin/category');
         } else {
