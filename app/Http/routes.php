@@ -14,9 +14,9 @@
 // web中间件从5.2.27版本以后默认全局加载，不需要自己手动载入，如果自己手动重复载入，会导致session无法加载
 // Route::group(['middleware' => ['web']], function () {
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
+    Route::get('/', 'Home\IndexController@index');
+    Route::get('/cate', 'Home\IndexController@cate');
+    Route::get('/art', 'Home\IndexController@article');
 
     Route::any('admin/login', 'Admin\LoginController@login');
     Route::get('admin/code', 'Admin\LoginController@code');
